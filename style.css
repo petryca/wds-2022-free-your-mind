@@ -1,0 +1,302 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;800;900&display=swap');
+
+* {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+@media (max-width: 600px) {
+  :root {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 420px) {
+  :root {
+    font-size: 14px;
+  }
+}
+
+header {
+  height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  box-shadow: 0 0 3rem rgba(0, 0, 0, 0.8);
+  z-index: 2;
+}
+
+#hero {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+}
+
+header div {
+  position: relative;
+  color: #fff;
+}
+
+header h1 {
+  font-weight: 900;
+  font-size: 3.2rem;
+  letter-spacing: -1px;
+  white-space: no-wrap;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+header p {
+  font-size: 1.4rem;
+}
+
+section {
+  padding: 6rem 1rem;
+}
+
+#intro {
+  background-image: linear-gradient(to right bottom, #261C5C, #8566FF);
+  color: #fff;
+  position: relative;
+  z-index: 1;
+}
+
+#intro p {
+  font-size: 3rem;
+  font-weight: 800;
+  margin: 0.5rem;
+}
+
+.button {
+    display: inline-block;
+    color: #fff;
+    text-decoration: none;
+    border: 2px solid #fff;
+    padding: 1.6rem 2.2rem;
+    font-size: 1.1rem;
+    margin: 1.5rem;
+    transition: all 0.3s;
+}
+
+.button:hover {
+  transform: scale(1.1);
+}
+
+#intro div {
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 800px) {
+  #intro div {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+#intro svg {
+  display: block;
+  width: 8rem;
+  margin: 1.5rem;
+  fill: transparent;
+  stroke: #fff;
+  stroke-width: 2;
+}
+
+#icon-knob line {
+  animation: rotate 5s infinite linear;
+  transform-origin: center;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+#icon-kick circle:last-child {
+  animation: pulse 500ms infinite ease-out;
+}
+
+@keyframes pulse {
+  from {
+    r: 10%;
+  }
+  to {
+    r: 30%;
+  }
+}
+
+#icon-equalizer line {
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-out;
+  animation-direction: alternate;
+  transform-origin: center bottom;
+  transform-box: fill-box;
+}
+
+#icon-equalizer line:nth-of-type(1) {
+  animation-name: eq-a;
+  animation-duration: 400ms;
+}
+
+#icon-equalizer line:nth-of-type(2) {
+  animation-name: eq-b;
+  animation-duration: 800ms;
+}
+
+#icon-equalizer line:nth-of-type(3) {
+  animation-name: eq-c;
+  animation-duration: 700ms;
+}
+
+#icon-equalizer line:nth-of-type(4) {
+  animation-name: eq-d;
+  animation-duration: 800ms;
+}
+
+#icon-equalizer line:nth-of-type(5) {
+  animation-name: eq-e;
+  animation-duration: 300ms;
+}
+
+@keyframes eq-a {
+  0%   { transform: scale(1, 0.5); }
+  50%  { transform: scale(1, 0.8); }
+  100% { transform: scale(1, 0.3); }
+}
+@keyframes eq-b {
+  0%   { transform: scale(1, 1); }
+  50%  { transform: scale(1, 1.1); }
+  100% { transform: scale(1, 0.7); }
+}
+@keyframes eq-c {
+  0%   { transform: scale(1, 1); }
+  50%  { transform: scale(1, 0.4); }
+  100% { transform: scale(1, 0.6); }
+}
+@keyframes eq-d {
+  0%   { transform: scale(1, 1); }
+  50%  { transform: scale(1, 1.8); }
+  100% { transform: scale(1, 0.8); }
+}
+@keyframes eq-e {
+  0%   { transform: scale(1, 1); }
+  50%  { transform: scale(1, 1.2); }
+  100% { transform: scale(1, 0.7); }
+}
+
+h2 {
+  font-size: 1.6rem;
+}
+
+#lineup img {
+  display: block;
+  max-width: 340px;
+  border-radius: 50%;
+  margin: 6rem auto;
+}
+
+#lineup ul {
+  list-style-type: none;
+  font-size: 2.8rem;
+  font-weight: 800;
+  letter-spacing: -1px;
+  line-height: 1.1;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#lineup li {
+  padding: 0 0.5rem;
+  cursor: pointer;
+  transition: all 6s ease-out;
+}
+
+#lineup li:hover {
+  transition: all 0.1s;
+}
+
+#lineup li:nth-child(even) {
+  font-weight: 400;
+}
+
+@media (max-width: 800px) {
+  #lineup ul {
+    font-size: 2rem;
+    flex-direction: column;
+  }
+}
+
+#map {
+  height: 100vh;
+}
+
+.marker {
+  background-image: url(media/location.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 64px;
+  height: 64px;
+}
+
+footer {
+  padding: 4rem;
+  background-color: #111;
+  position: relative;
+}
+
+footer img {
+  display: block;
+  width: 4rem;
+  height: 4rem;
+  transition: all 0.3s;
+}
+
+footer img:hover {
+  transform: scale(1.3);
+}
+
+footer ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+}
+
+footer li {
+  margin: 1rem;
+}
+
+footer>p {
+  text-align: center;
+  color: #666;
+  margin-top: 2rem;
+  font-size: 0.8rem;
+}
+
+footer>p>a {
+  color: inherit;
+  font-weight: 600;
+}
+
+footer>p>a:hover {
+  text-decoration: underline;
+}
